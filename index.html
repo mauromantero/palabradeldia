@@ -9,12 +9,12 @@
 </head>
 <body>
 <div class="title">
-La paraula del dia
+<texto>La paraula del dia</texto>
 </div>
 
 <div class="title">
     <input type="text" id="resposta"/>
-    <button type="submit" onclick="analitzarParaula()">Enviar</button>
+    <button type="submit" id="boton" onclick="analitzarParaula()">Enviar</button>
 </div>
 
 <div class="respostes" id="respostes">
@@ -22,6 +22,21 @@ La paraula del dia
 
 </div>
 
-<div class="panel-title" id="pista" >Pista: Paraula de 5 lletres</div>
+
+
+<div class="panel-title" id="pista" ><p>Pista: Paraula de 5 lletres</p> <p>5 intents màxim</p></div>
+
+<div class="panel-title" id="pista2">¿Cual será la palabra?</div>
+
+<div class="separacion">
+
+    <button class="botones" type="submit" id="boton3" onclick="mostrarsecreta()">Rendirse</button>
+    <div id="rendirse"></div>
+
+    <button class="botones" type="submit" id="boton2" onclick="reiniciar()">REINICIAR</button>
+
+</div>
+
+
 </body>
 </html>
