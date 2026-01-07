@@ -5,13 +5,27 @@ body {
     background: #eedddd;
 }
 
-input, button{
+/*Tot lo referit a l'estètica de la part d'adalt*/
+
+input{
     display: inline;
-    background-color: #fffefe;
+    background-color: #333;
     padding: 10px;
-    font-size: 15px;
+    font-size: 25px;
     justify-content: center;
     align-items: center;
+    color: white;
+
+}
+
+.botongod{
+    display: inline;
+    background-color: #333;
+    padding: 10px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .title {
@@ -23,6 +37,7 @@ input, button{
     left: 0;
     width: 100%;
     font-size: 30px;
+    display: inline-block;
 }
 
 .respostes{
@@ -42,6 +57,8 @@ input, button{
     padding: 20px;
 }
 
+/*Lletra de x color*/
+
 .slot {
     width: 50px;
     height: 50px;
@@ -51,15 +68,32 @@ input, button{
     border: 1px solid #ccc;
     margin: 5px;
     font-size: 18px;
-    background-color: #fff;
+    background-color: #c4b9b9;
+}
+
+.slot:hover {
+    background-color: #757575;
 }
 
 .slot.green {
-    background-color: #4caf50;
+    background-color: #3dfc71;
+    color: #087067;
 }
+
+.slot.green:hover {
+    background-color: #5cb85c;
+}
+
 .slot.yellow {
-    background-color: #f7ff8c;
+    background-color: #f2ff4a;
+    color: #27620a;
 }
+
+.slot.yellow:hover {
+    background-color: #c2ad56;
+}
+
+/*Text de la segonda part, a baix de les lletres de colors */
 
 .panel-title {
     text-align: center;
@@ -69,13 +103,17 @@ input, button{
     bottom: 0;
     left: 0;
     width: 100%;
+    font-size: 15px;
 }
+
+/*Text del titol*/
 
 texto{
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: #ffffff;
+    text-shadow: #78805f 2px 2px 1px;
 }
 
 texto:hover{
@@ -83,7 +121,11 @@ texto:hover{
     padding: 10px;
     background-color: #333;
     color: #f6f0c1;
+    text-shadow: #8c7933 2px 2px 1px;
+
 }
+
+/*Utilitzat per canviar les pistes i els intents*/
 
 p{
     text-align: center;
@@ -91,25 +133,53 @@ p{
     margin: 0px
 }
 
+/*Separació dels botons i anuncis*/
+
+.separacion-general{
+    grid-template-columns: 2fr 1fr 2fr;
+    text-align: center;
+    display: grid;
+    gap: 40px;
+}
+
+/*separació dels botons entre si*/
+
 .separacion{
 
     text-align: center;
     padding: 10px;
     display: grid;
     display: inline-block;
-    grid-template-columns: 1fr 1fr;
     align-items: center;
     margin: 50px;
-
+    gap: 10px
 }
+
+/*Separació dels botons*/
 
 .botones{
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: #ffffff;
+    border-color: #ff4b6d;
+    cursor:pointer;
+    font-size: 15px;
 }
 
 .botones:hover{
     box-shadow: #3f8042 2px 2px 1px;
+}
+
+.inputclass{
+    border-color: #ff4b6d;
+}
+
+.boton{
+    text-align: center;
+
+}
+
+.botonX{
+    /*display: none*/
 }

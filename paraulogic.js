@@ -1,3 +1,5 @@
+// Paraules que hi poden haver
+
 const palabrascandidatas = ['RADIO', 'BARBA', 'GAFAS', 'DADOS', 'ZAGAL']
 let secreta = ''
 
@@ -21,11 +23,12 @@ Inicialitzam valors
 let intentos = 5
 let contador = 0
 let resuelto= false
-let letrabien = ""
+
+// Funció que canvia la paraula a majuscules, el compara i canvia de colors depenen de cada lletra de la paraula, si s'encerta sensera t'ho fa sebre, si no, valora si la lletra està o no
 
 function analitzarParaula () {
 
-
+    document.getElementById('boton3').disabled = false;
     let color = " "
     let paraula = document.getElementById('resposta').value.toUpperCase();
     let palabrabien = ''
@@ -50,6 +53,7 @@ function analitzarParaula () {
                     color += '<div class="slot green">' + palabrabien.charAt(i) + '</div>';
                 }
                 alert("¡Lo has conseguido!")
+                document.getElementById('boton').disabled = true;
 
             } else {
 
@@ -100,11 +104,15 @@ function analitzarParaula () {
             document.getElementById('boton').disabled = true;
             resuelto = true
             document.getElementById('pista2').innerText = "La palabra es " + secreta
+            document.getElementById('resposta').disabled = true;
+            document.getElementById('boton3').disabled = true;
         }
 
         document.getElementById('pista').innerText = 'La paraula té ' + secreta.length + ' lletres' + "\n" + intentos + " intents màxim"
         document.getElementById('respostes').innerHTML += respostaHTML;
 }
+
+// Funció que serveix per reiniciar la partida
 
 function reiniciar(){
     respostaHTML = ""
@@ -113,13 +121,15 @@ function reiniciar(){
     intentos = 5
     contador = 0
     document.getElementById('boton').disabled = false;
+    document.getElementById('boton3').disabled = false;
     resuelto = false
     document.getElementById('pista2').innerText = "¿Cual será la palabra?"
     document.getElementById('rendirse').innerText = "";
+    document.getElementById('resposta').disabled = false;
     document.getElementById('pista').innerText = 'La paraula té ' + secreta.length + ' lletres' + "\n" + intentos + " intents màxim"
 }
 
-
+// Permeteix desactivar i activar utilitzar l'Enter per acomodar donar-li a "Enviar"
 
 addEventListener("keydown", function (event) {
     if (event.key === "Enter" && resuelto === false) {
@@ -127,11 +137,41 @@ addEventListener("keydown", function (event) {
     }
 });
 
+// Funció que serveix per si el jugador decideix rendir-se, no deixa fer res que no sigui reiniciar
+
 function mostrarsecreta(){
     document.getElementById('rendirse').innerText = secreta;
     document.getElementById('boton').disabled = true;
     resuelto = true
+    document.getElementById('resposta').disabled = true;
 }
 
+// Funcions per fer apareixer els anuncis després d'un temps de donar-li a la creu
 
-//TODO que funcione el enter
+function anuncioaparecer1(){
+    document.getElementById('imagen1').hidden = false;
+    document.getElementById('BotonX').hidden = false;
+}
+
+function anuncioaparecer2(){
+    document.getElementById('imagen2').hidden=false
+    document.getElementById('BotonX2').hidden = false;
+}
+
+function anuncios2(){
+    document.getElementById('imagen2').hidden=true
+    document.getElementById('BotonX2').hidden = true;
+    setTimeout(() => {
+        anuncioaparecer2()
+    }, 2000)
+
+}
+
+function anuncios(){
+    document.getElementById('imagen1').hidden= true;
+    document.getElementById('BotonX').hidden= true;
+    setTimeout(() => {
+        anuncioaparecer1()
+    }, 2000)
+
+}

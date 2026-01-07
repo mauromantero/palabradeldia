@@ -12,10 +12,14 @@
 <texto>La paraula del dia</texto>
 </div>
 
+<!--El lloc per escriure i el botó que funciona per enviar-->
+
 <div class="title">
-    <input type="text" id="resposta"/>
-    <button type="submit" id="boton" onclick="analitzarParaula()">Enviar</button>
+    <input class="inputclass"  type="text" id="resposta"/>
+    <button class="botongod , botones" type="submit" id="boton" onclick="analitzarParaula()">Enviar</button>
 </div>
+
+<!--Lloc per col·locar les lletres coloretjades-->
 
 <div class="respostes" id="respostes">
 
@@ -23,20 +27,57 @@
 </div>
 
 
+<!--Lloc on està la pista i s'inserta la paraula que és quan et rendeixes o perds-->
 
 <div class="panel-title" id="pista" ><p>Pista: Paraula de 5 lletres</p> <p>5 intents màxim</p></div>
 
-<div class="panel-title" id="pista2">¿Cual será la palabra?</div>
+<div class="panel-title" id="pista2">¿Quina serà la paraula?</div>
 
-<div class="separacion">
+<!--Lloc de l'"anunci" de l'esquerra-->
 
-    <button class="botones" type="submit" id="boton3" onclick="mostrarsecreta()">Rendirse</button>
+<div class="separacion-general">
+
+    <div>
+
+        <button class="botonX" id="BotonX" onclick="anuncios()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+
+        </button>
+        <img class="boton" src="imagenes/perrobailongo.jpeg" id="imagen1" height="400" width="400"/>
+
+
+    </div>
+
+<!--    Botó per rendir-se i reiniciar el joc-->
+
+    <div class="separacion">
+
+    <button class="botones" type="submit" id="boton3" onclick="mostrarsecreta()">RENDIR-SE</button>
     <div id="rendirse"></div>
 
     <button class="botones" type="submit" id="boton2" onclick="reiniciar()">REINICIAR</button>
 
 </div>
 
+<!--Lloc de l'"anunci" de la dreta-->
+
+    <div>
+
+        <button class="botonX" id="BotonX2" onclick="anuncios2()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+
+        </button>
+
+        <img class="boton" src="imagenes/perrobailongo.jpeg" id="imagen2" height="400" width="400"/>
+    </div>
+
+</div>
 
 </body>
 </html>
