@@ -181,5 +181,5 @@ p{
 }
 
 .botonX{
-    /*display: none*/
+    cursor:pointer;
 }
